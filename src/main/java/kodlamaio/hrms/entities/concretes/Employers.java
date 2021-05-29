@@ -1,12 +1,17 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
 @Entity
 @Data
 @Table(name = "employers")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employers {
 
 	@Id
@@ -29,4 +34,8 @@ public class Employers {
 	@OneToOne
 	@JoinColumn(name = "userid", insertable = false, updatable = false)
 	private Users users;
+
+	@OneToMany(mappedBy = "employer")
+	private List<JobAdvertisements> jobAdvertisements;
+
 }
