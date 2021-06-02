@@ -44,7 +44,7 @@ public class JobSeekersManager implements JobSeekersService {
 	public Result createJobSeeker(JobSeekers jobSeeker) {
 		
 		//Aday'ın user tablosunda bulunma şartı	
-		boolean user = usersDao.findById(jobSeeker.getUserId()).get() != null;
+		boolean user = usersDao.findById(jobSeeker.getUsers().getId()).get() != null;
 	
 		//Tüm alanların dolu olması şartı
 			//Database tarafında bütün alanlar not null olarak işaretlidir.

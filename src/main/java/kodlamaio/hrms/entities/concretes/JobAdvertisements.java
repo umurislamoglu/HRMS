@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -47,6 +48,9 @@ public class JobAdvertisements {
 	@Column(name="isactive")
 	private boolean isActive;
 	
+	@Column(name="creationdate")
+	private final Date creationDate = new Date();
+	
 	
 	@ManyToOne
 	@JoinColumn(name= "employerid")
@@ -55,6 +59,8 @@ public class JobAdvertisements {
 	@OneToOne
 	@JoinColumn(name = "positionid")
 	private JobPositions jobPosition;
+	
+	
 
 	
 }

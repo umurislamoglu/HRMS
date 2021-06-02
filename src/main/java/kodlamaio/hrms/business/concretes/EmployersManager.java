@@ -73,4 +73,10 @@ public class EmployersManager implements EmployersService {
 		}
 	
 	}
+
+	@Override
+	public DataResult<Employers> getbyId(int id) {
+		
+		return new SuccessDataResult<Employers>(employersDao.findById(id).get());
+	}
 }

@@ -9,5 +9,6 @@ import kodlamaio.hrms.entities.concretes.Employers;
 public interface EmployersService {
 	DataResult<List<Employers>> getAll();
 	
+	DataResult<Employers> getbyId(int id);
 	Result createEmployer(Employers employer);
 }
